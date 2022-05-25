@@ -9,9 +9,14 @@ namespace Stefanini.Data.Repository
     {
         public PessoaRepository(StefaniniDbContext context) : base(context) { }
 
-        public async Task<Pessoa> ObterCidadeDaPessoa(int id)
+        public async Task<IEnumerable<Pessoa>> ObterCidadePessoas()
+        {
+            return await Db.Pessoas.AsNoTracking().Include(c => c.Cidade).OrderBy(p => p.Nome).ToListAsync();
+        }
+
+        public async Task<Pessoa> ObterCidadePessoa(int id)
         {
             return await Db.Pessoas.AsNoTracking().Include(c => c.Cidade).FirstOrDefaultAsync(p => p.Id == id);
-        }
+        }   
     }
 }

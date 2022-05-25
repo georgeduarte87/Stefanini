@@ -9,10 +9,11 @@ namespace Stefanini.API.Configuration
         public AutomapperConfig()
         {
             CreateMap<Cidade, CidadeViewModel>().ReverseMap();
-            CreateMap<PessoaViewModel, Pessoa>();
+            CreateMap<Pessoa, PessoaViewModel>().ReverseMap();
+            /*
             CreateMap<Pessoa, PessoaViewModel>()
                 .ForMember(dest => dest.NomeCidade, opt => opt.MapFrom(src => src.Cidade.Nome))
-                .ForMember(dest => dest.NomeUF, opt => opt.MapFrom(src => src.Cidade.UF));
+                .ForMember(dest => dest.NomeUF, opt => opt.MapFrom(src => src.Cidade.UF));*/
         }
     }
 }

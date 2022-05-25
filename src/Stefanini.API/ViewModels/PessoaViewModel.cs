@@ -18,10 +18,6 @@ namespace Stefanini.API.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int Idade { get; set; }
 
-        [ScaffoldColumn(false)]
-        public string NomeCidade { get; set; }
-
-        [ScaffoldColumn(false)]
-        public string NomeUF { get; set; }
+        public int Id_Cidade { get; set; }
     }
 }

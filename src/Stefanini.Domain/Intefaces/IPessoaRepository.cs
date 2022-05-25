@@ -4,6 +4,8 @@ namespace Stefanini.Domain.Intefaces
 {
     public interface IPessoaRepository : IRepository<Pessoa>
     {
-        Task<Pessoa> ObterCidadeDaPessoa(int id);
+        Task<IEnumerable<Pessoa>> ObterCidadePessoas();
+
+        Task<Pessoa> ObterCidadePessoa(int id);
     }
 }
