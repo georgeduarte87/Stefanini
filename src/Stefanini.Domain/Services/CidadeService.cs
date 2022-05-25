@@ -14,7 +14,7 @@ namespace Stefanini.Domain.Services
             _cidadeRepository = cidadeRepository;
         }
 
-        public async Task<bool> Adicional(Cidade cidade)
+        public async Task<bool> Adicionar(Cidade cidade)
         {
             if (!ExecutarValidacao(new CidadeValidation(), cidade)) return false;
 
@@ -44,7 +44,7 @@ namespace Stefanini.Domain.Services
 
         public async Task<bool> Remover(int id)
         {
-            if (_cidadeRepository.ObterPessoasPorCidade(id).Result.Pessoas.Any())
+            if (_cidadeRepository.ObterPessoasDaCidade(id).Result.Pessoas.Any())
             {
                 Notificar("A cidade possui pessoas cadastradas!");
                 return false;

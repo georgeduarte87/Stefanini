@@ -14,7 +14,7 @@ namespace Stefanini.Data.Repository
     {
         public CidadeRepository(StefaniniDbContext context) : base(context) { }
 
-        public async Task<Cidade> ObterPessoasPorCidade(int id)
+        public async Task<Cidade> ObterPessoasDaCidade(int id)
         {
             return await Db.Cidades.AsNoTracking()
                 .Include(c => c.Pessoas)

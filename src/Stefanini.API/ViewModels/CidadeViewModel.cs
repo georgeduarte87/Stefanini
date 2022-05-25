@@ -12,7 +12,7 @@ namespace Stefanini.API.ViewModels
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        [StringLength(8, ErrorMessage = "O campo {0} precisa ter {1} caracteres", MinimumLength = 8)]
+        [StringLength(2, ErrorMessage = "O campo {0} precisa ter {1} caracteres", MinimumLength = 2)]
         public string UF { get; set; }
 
         public IEnumerable<PessoaViewModel> Pessoas { get; set; }
